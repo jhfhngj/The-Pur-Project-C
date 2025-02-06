@@ -127,7 +127,7 @@ def read(code):
         elif s(line)[0] == "runpy":
             os.system(f"python3 {s(line)[1]}")
         elif line.startswith("##"):
-            continue
+            pass
         else:
             print("Err in line",i+": Unsupported","'"+line+"'")
             quit(1)
