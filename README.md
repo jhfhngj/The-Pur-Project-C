@@ -46,6 +46,8 @@ Syntax is like this:
 
 `command(input`
 
+To make a comment, the line HAS to start with `##`!
+
 For each of what might be a period in the original Pur, is now a left circle bracket.
 
 ### Built-in libraries
