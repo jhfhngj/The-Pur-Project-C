@@ -13,7 +13,7 @@ def read(code):
     typel = ""
     i = 0
     while i < len(code):
-        line = code[i]
+        line = str(code[i])
         try:
             end = code.index("end(", i)
         except:
@@ -128,6 +128,9 @@ def read(code):
             os.system(f"python3 {s(line)[1]}")
         elif line.startswith("##"):
             continue
+        else:
+            print("Err in line",i+": Unsupported","'"+line+"'")
+            quit(1)
         i += 1
         
 def rfl(file):
