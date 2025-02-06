@@ -126,7 +126,10 @@ def read(code):
                 i = start
         elif s(line)[0] == "runpy":
             os.system(f"python3 {s(line)[1]}")
+        elif line.startswith("##"):
+            continue
         i += 1
+        
 def rfl(file):
     rode = []
     with open(file,"r") as f:
