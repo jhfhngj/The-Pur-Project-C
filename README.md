@@ -1,6 +1,6 @@
-# The-Pur-Project-B
+# The-Pur-Project-C
 
-Remake of Pur, Pur originally was hard to develop
+Remake of Pur-B, Pur fam originally was hard to develop
 
 ## How to install Pur?
 
