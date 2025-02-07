@@ -128,6 +128,8 @@ def read(code):
             os.system(f"python3 {s(line)[1]}")
         elif line.startswith("##"):
             pass
+        elif line == "" or line.lower() == "run":
+            pass
         else:
             print("Err in line",i+": Unsupported","'"+line+"'")
             quit(1)
@@ -144,3 +146,15 @@ def rfl(file):
 if len(sys.argv) > 1:
     rfl(sys.argv[1])
     input("Press Enter to continue . . . ")
+else:
+    a = ""
+    b = []
+    print("Pur Interpreter 1.5 on " + str(os.uname()[0]), str(os.uname()[1]))
+    while True:
+        if a.lower() == "run":
+            read(b)
+            a = ""
+        
+        else:
+            a = input(": ")
+            b.append(a)
