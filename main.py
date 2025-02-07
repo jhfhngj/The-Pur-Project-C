@@ -4,6 +4,7 @@ import sys
 def s(text: str):
     return text.split("(")
 var = {}
+funcs = {}
 libs = []
 dirlibs = []
 out = ""
