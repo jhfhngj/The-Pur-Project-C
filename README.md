@@ -38,6 +38,10 @@ If you want, the releases can also let you run them in executable form. (soon)
 
 `runpy` - Runs a Python program, in your Pur program.
 
+`func` - Defines a function.
+
+`rfunc` - Runs a function.
+
 `uselib` - Uses a folder with Pur programs as a library. Classes are folders, methods are files.
 
 ### Syntax
