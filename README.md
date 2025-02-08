@@ -100,3 +100,14 @@ frvr(
 prt(FOREVER!
 end(
 ```
+
+Hello There - uses a function!
+
+```
+func(hello
+prt(Hello, World!
+end(
+
+
+rfunc(hello
+```
