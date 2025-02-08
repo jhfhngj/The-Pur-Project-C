@@ -3,12 +3,16 @@ import os
 import sys
 def s(text: str):
     return text.split("(")
+global rufc
+rufc = False
 var = {}
 funcs = {}
 libs = []
 dirlibs = []
 out = ""
 def read(code):
+    global rufc
+    rufc = False
     code = list(code)
     out = ""
     typel = ""
@@ -125,12 +129,22 @@ def read(code):
             end = i
             if typel == 'loopf':
                 i = start
+            if rufc == True:
+                i = gt + 1
+                rufc = False
         elif s(line)[0] == "runpy":
             os.system(f"python3 {s(line)[1]}")
         elif line.startswith("##"):
             pass
         elif line == "" or line.lower() == "run":
             pass
+        elif s(line)[0] == "func":
+            funcs[s(line)[1]] = (i, end)
+        elif s(line)[0] == "rfunc":
+            if funcs.get(s(line)[1]) != None:
+                gt = i
+                i = funcs.get(s(line)[1])[0] + 1
+                rufc = True
         else:
             print("Err in line",i+": Unsupported","'"+line+"'")
             quit(1)
@@ -150,7 +164,7 @@ if len(sys.argv) > 1:
 else:
     a = ""
     b = []
-    print("Pur Interpreter 1.5 on " + str(os.uname()[0]), str(os.uname()[1]))
+    print("Pur Interpreter 1.51 on " + str(os.uname()[0]), str(os.uname()[1]))
     while True:
         if a.lower() == "run":
             read(b)
