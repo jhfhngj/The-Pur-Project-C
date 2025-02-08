@@ -146,7 +146,7 @@ def read(code):
                 i = funcs.get(s(line)[1])[0] + 1
                 rufc = True
         else:
-            print("Err in line",i+": Unsupported","'"+line+"'")
+            print("Err in line",str(i)+": Unsupported","'"+str(line)+"'")
             quit(1)
         i += 1
         
