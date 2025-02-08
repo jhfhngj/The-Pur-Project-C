@@ -4,7 +4,15 @@ Remake of Pur-B, Pur fam originally was hard to develop
 
 ## How to install Pur?
 
-Not that complicated yet
+First of all, you clone the repo by doing `git clone https://github.com/jhfhngj/The-Pur-Project-C.git`
+
+Then, you put it in your `bin` folder by doing `sudo cp The-Pur-Project-C/main.py /bin/pur`
+
+Finally done.
+
+For Windows, instead of `bin` you `copy` the file to a PATH folder / pur
+
+Or just use the Python executable installer
 
 ## What is Pur?
 
