@@ -164,7 +164,7 @@ if len(sys.argv) > 1:
 else:
     a = ""
     b = []
-    print("Pur Interpreter 1.51 on " + str(os.uname()[0]), str(os.uname()[1]))
+    print("Pur Interpreter 1.6 on " + str(os.uname()[0]), str(os.uname()[1]))
     while True:
         if a.lower() == "run":
             read(b)
