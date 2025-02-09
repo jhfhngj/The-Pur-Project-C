@@ -10,7 +10,7 @@ Then, you put it in your `bin` folder by doing `sudo cp The-Pur-Project-C/main.p
 
 Finally done.
 
-For Windows, instead of `bin` you `copy` the file to a PATH folder / pur
+For Windows, instead of `bin` you `copy` the file to a PATH folder / pur.py
 
 Or just use the Python executable installer
 
