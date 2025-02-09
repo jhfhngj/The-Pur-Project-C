@@ -147,6 +147,7 @@ def read(code):
                 rufc = True
             else:
                 print("No such function:",s(line)[1])
+                quit(2)
         elif s(line)[0] == "vardef":
             var[s(line)[1]] = s(line)[2]
         elif s(line)[0] == "rvar":
