@@ -50,6 +50,14 @@ If you want, the releases can also let you run them in executable form. (soon)
 
 `rfunc` - Runs a function.
 
+`var` - Defines a variable.
+
+`rvar` - Removes a variable from the program.
+
+`rmfunc` - Removes a function from the program.
+
+`quit` - Quits a program.
+
 `uselib` - Uses a folder with Pur programs as a library. Classes are folders, methods are files.
 
 ### Syntax
@@ -118,4 +126,17 @@ end(
 
 
 rfunc(hello
+```
+
+Big Function List
+```
+## Begone, function.
+func(throwaway
+prt(BEGONE
+end(
+
+rfunc(throwaway
+rmfunc(throwaway
+## Crash time!
+rfunc(throwaway
 ```

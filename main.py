@@ -153,7 +153,7 @@ def read(code):
             except:
                 print("KeydelError in line",str(line))
                 quit(2)
-        elif s(line)[0] == "rfunc":
+        elif s(line)[0] == "rmfunc":
             try:
                 funcs.pop(s(line)[1])
             except:
