@@ -145,6 +145,23 @@ def read(code):
                 gt = i
                 i = funcs.get(s(line)[1])[0] + 1
                 rufc = True
+        elif s(line)[0] == "vardef":
+            var[s(line)[1]] = s(line)[2]
+        elif s(line)[0] == "rvar":
+            try:
+                var.pop(s(line)[1])
+            except:
+                print("KeydelError in line",str(line))
+                quit(2)
+        elif s(line)[0] == "rfunc":
+            try:
+                funcs.pop(s(line)[1])
+            except:
+                print("KeydelError in line",str(line))
+                quit(2)
+        elif s(line)[0] == "quit":
+            print(s(line)[1])
+            quit(int(s(line)[2]))
         else:
             print("Err in line",str(i)+": Unsupported","'"+str(line)+"'")
             quit(1)
@@ -164,7 +181,7 @@ if len(sys.argv) > 1:
 else:
     a = ""
     b = []
-    print("Pur Interpreter 1.6 on " + str(os.uname()[0]), str(os.uname()[1]))
+    print("Pur Interpreter 1.7 on " + str(os.uname()[0]), str(os.uname()[1]))
     while True:
         if a.lower() == "run":
             read(b)
