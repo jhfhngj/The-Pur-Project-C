@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import os
+import platform
 import sys
 def s(text: str):
     return text.split("(")
@@ -184,7 +185,7 @@ if len(sys.argv) > 1:
 else:
     a = ""
     b = []
-    print("Pur Interpreter 1.7 on " + str(os.uname()[0]), str(os.uname()[1]))
+    print("Pur Interpreter 1.7 on " + str(platform.platform()))
     while True:
         if a.lower() == "run":
             read(b)
