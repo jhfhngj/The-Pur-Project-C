@@ -20,6 +20,8 @@ def read(code):
     i = 0
     while i < len(code):
         line = str(code[i])
+        if line[len(line)-1] == ")":
+            line = line[:-1]
         try:
             end = code.index("end(", i)
         except:
