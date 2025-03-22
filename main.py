@@ -191,7 +191,7 @@ if len(sys.argv) > 1:
 else:
     a = ""
     b = []
-    print("Pur Interpreter 1.7 on " + str(platform.platform()))
+    print("Pur Interpreter 1.8 on " + str(platform.platform()))
     while True:
         if a.lower() == "run":
             read(b)
