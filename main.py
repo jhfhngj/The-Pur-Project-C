@@ -20,17 +20,21 @@ def read(code):
     i = 0
     while i < len(code):
         line = str(code[i])
-        if line[:-1] == ")":
-            line = line[:-1]
+        line = line.removesuffix(")")
         try:
             end = code.index("end(", i)
         except:
             end = len(code)
-        if s(line)[0] == "prt":
-            if var.get(s(line)[1]) == None:
-                print(s(line)[1])
-            else:
-                print(var.get(s(line)[1]))
+        if line.startswith("prt("):  # Check if the command is "prt"
+            args = line.removeprefix("prt(").removesuffix(")").split(" ")  # Remove "prt(" and split by space
+            for index, item in enumerate(args):  # Iterate over the arguments
+                value = var.get(item, item)  # Get the variable value or use the raw item
+                if index == len(args) - 1:  # Check if this is the last item
+                    print(value)  # Print the value with a newline
+                else:
+                    print(value, end=" ")  # Print the value with a space but no newline
+
+
         elif s(line)[0] == "into":
             do = input()
             var.update({str(s(line)[1]): do})
