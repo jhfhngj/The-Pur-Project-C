@@ -11,18 +11,24 @@ funcs = {}
 libs = []
 dirlibs = []
 out = ""
+def find_indices(strings_list, selection):
+    indices = []  # Create an empty list to store the indices
+    for index, string in enumerate(strings_list):  # Loop through strings_list with indices
+        if string in selection:  # Check if the string exists in the selection
+            indices.append(index)  # Append the index to the list if the condition is met
+    return indices
 def read(code):
     global rufc
     rufc = False
     code = list(code)
     out = ""
     typel = ""
-    i = 0
+    i: int = 0
     while i < len(code):
         line = str(code[i])
         line = line.removesuffix(")")
         try:
-            end = code.index("end(", i)
+            end = find_indices(code, ["end", "end(", "end()"])[0]
         except:
             end = len(code)
         if line.startswith("prt("):  # Check if the command is "prt"
@@ -173,9 +179,12 @@ def read(code):
             print(s(line)[1])
             quit(int(s(line)[2]))
         else:
-            print("Err in line",str(i)+": Unsupported","'"+str(line)+"'")
+            print("Err 1 in line",str(i)+": Unsupported","'"+str(line)+"'")
             quit(1)
-        i += 1
+        i: int
+        #print(f"i = {i}, type(i) = {type(i)}")
+
+        i = i + 1
         
 def rfl(file):
     rode = []
