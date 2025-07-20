@@ -27,12 +27,9 @@ def read(code):
     while i < len(code):
         line = str(code[i])
         line = line.removesuffix(")")
-        try:
-            end = find_indices(code, ["end", "end(", "end()"])[0]
-        except:
-            end = len(code)
+        end = len(code)
         if line.startswith("prt("):  # Check if the command is "prt"
-            args = line.removeprefix("prt(").removesuffix(")").split(" ")  # Remove "prt(" and split by space
+            args = line.removeprefix("prt(").split(" ")  # Remove "prt(" and split by space
             for index, item in enumerate(args):  # Iterate over the arguments
                 value = var.get(item, item)  # Get the variable value or use the raw item
                 if index == len(args) - 1:  # Check if this is the last item
