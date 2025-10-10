@@ -24,10 +24,12 @@ def read(code):
         except:
             end = len(code)
         if s(line)[0] == "prt":
-            if var.get(s(line)[1]) == None:
-                print(s(line)[1])
-            else:
-                print(var.get(s(line)[1]))
+            full = ""
+            for thingie in s(line)[1].split():
+                if var.get(thingie) != None:
+                    full += var.get(thingie) + " "
+                else:
+                    full += thingie + " "
         elif s(line)[0] == "into":
             do = input()
             var.update({str(s(line)[1]): do})
