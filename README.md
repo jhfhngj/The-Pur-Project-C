@@ -2,6 +2,8 @@
 
 Remake of Pur-B, Pur fam originally was hard to develop
 
+I fixed Pur 1.8! Yes! It's time to be happy and not spontaneously combust!
+
 ## How to install Pur?
 
 First of all, you clone the repo by doing `git clone https://github.com/jhfhngj/The-Pur-Project-C.git`
