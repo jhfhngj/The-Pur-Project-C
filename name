@@ -1,3 +1,0 @@
-prt(Hello there! What's your name?)
-into(nam)
-prt(Hello there, nam !)
