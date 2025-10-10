@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import os
-import platform
 import sys
 def s(text: str):
     return text.split("(")
@@ -11,33 +10,24 @@ funcs = {}
 libs = []
 dirlibs = []
 out = ""
-def find_indices(strings_list, selection):
-    indices = []  # Create an empty list to store the indices
-    for index, string in enumerate(strings_list):  # Loop through strings_list with indices
-        if string in selection:  # Check if the string exists in the selection
-            indices.append(index)  # Append the index to the list if the condition is met
-    return indices
 def read(code):
     global rufc
     rufc = False
     code = list(code)
     out = ""
     typel = ""
-    i: int = 0
+    i = 0
     while i < len(code):
         line = str(code[i])
-        line = line.removesuffix(")")
-        end = len(code)
-        if line.startswith("prt("):  # Check if the command is "prt"
-            args = line.removeprefix("prt(").split(" ")  # Remove "prt(" and split by space
-            for index, item in enumerate(args):  # Iterate over the arguments
-                value = var.get(item, item)  # Get the variable value or use the raw item
-                if index == len(args) - 1:  # Check if this is the last item
-                    print(value)  # Print the value with a newline
-                else:
-                    print(value, end=" ")  # Print the value with a space but no newline
-
-
+        try:
+            end = code.index("end(", i)
+        except:
+            end = len(code)
+        if s(line)[0] == "prt":
+            if var.get(s(line)[1]) == None:
+                print(s(line)[1])
+            else:
+                print(var.get(s(line)[1]))
         elif s(line)[0] == "into":
             do = input()
             var.update({str(s(line)[1]): do})
@@ -157,7 +147,6 @@ def read(code):
                 rufc = True
             else:
                 print("No such function:",s(line)[1])
-                quit(2)
         elif s(line)[0] == "vardef":
             var[s(line)[1]] = s(line)[2]
         elif s(line)[0] == "rvar":
@@ -176,12 +165,9 @@ def read(code):
             print(s(line)[1])
             quit(int(s(line)[2]))
         else:
-            print("Err 1 in line",str(i)+": Unsupported","'"+str(line)+"'")
+            print("Err in line",str(i)+": Unsupported","'"+str(line)+"'")
             quit(1)
-        i: int
-        #print(f"i = {i}, type(i) = {type(i)}")
-
-        i = i + 1
+        i += 1
         
 def rfl(file):
     rode = []
@@ -197,7 +183,7 @@ if len(sys.argv) > 1:
 else:
     a = ""
     b = []
-    print("Pur Interpreter 1.8 on " + str(platform.platform()))
+    print("Pur Interpreter 1.7 on " + str(os.uname()[0]), str(os.uname()[1]))
     while True:
         if a.lower() == "run":
             read(b)

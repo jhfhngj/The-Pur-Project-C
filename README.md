@@ -74,11 +74,9 @@ For each of what might be a period in the original Pur, is now a left circle bra
 
 Breakfast - function library to ensure Pur is working properly by saying foods - used for debugging the user modified Pur, or me, to test stuff.
 
-Quiz - program library. Sample proglib to show you the power of Pur 1.2+.
+Quiz - program library. Sample proglib to show you the power of Pur 1.2.
 
 rlib - regular library. It means 'repeating libs'. Made for `uselib`.
-
-Name - Greeting program. Shows the auto-replace abilities of Pur 1.8+.
 
 ### How to use the interpreter after you make your code?
 
