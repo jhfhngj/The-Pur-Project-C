@@ -1,7 +1,3 @@
-Notice:
-end() is being reworked, delaying Pur 1.9.
-When end() is fixed, 1.9 or 1.8.1 will be able for download!
-
 # The-Pur-Project-C
 
 Remake of Pur-B, Pur fam originally was hard to develop
