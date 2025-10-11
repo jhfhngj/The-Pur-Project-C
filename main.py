@@ -30,6 +30,7 @@ def read(code):
                     full += var.get(thingie) + " "
                 else:
                     full += thingie + " "
+            print(full)
         elif s(line)[0] == "into":
             do = input()
             var.update({str(s(line)[1]): do})
@@ -127,6 +128,8 @@ def read(code):
         #     start = i
         #     typel = "loopr"
         #     times = s(line)[1]
+        elif s(line)[0] == "brk":
+            typel = "brk"
         elif s(line)[0] == "end":
             end = i
             if typel == 'loopf':
@@ -134,6 +137,8 @@ def read(code):
             if rufc == True:
                 i = gt + 1
                 rufc = False
+            if typel == 'brk':
+                start = i+1
         elif s(line)[0] == "runpy":
             os.system(f"python3 {s(line)[1]}")
         elif line.startswith("##"):
@@ -166,6 +171,8 @@ def read(code):
         elif s(line)[0] == "quit":
             print(s(line)[1])
             quit(int(s(line)[2]))
+        elif s(line)[0] == "exit":
+            exit(0)
         else:
             print("Err in line",str(i)+": Unsupported","'"+str(line)+"'")
             quit(1)
@@ -183,14 +190,13 @@ if len(sys.argv) > 1:
     rfl(sys.argv[1])
     input("Press Enter to continue . . . ")
 else:
-    a = ""
     b = []
-    print("Pur Interpreter 1.7 on " + str(os.uname()[0]), str(os.uname()[1]))
+    print("Pur Interpreter 1.9 on " + str(os.uname()[0]), str(os.uname()[1]))
     while True:
+        a = input(": ")
         if a.lower() == "run":
             read(b)
             a = ""
-        
+            del a
         else:
-            a = input(": ")
             b.append(a)

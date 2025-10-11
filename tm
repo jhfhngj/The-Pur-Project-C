@@ -1,0 +1,10 @@
+into(inp
+if=(inp(0(flag
+prt(0
+exit(
+end(
+if=(inp(1(flag
+frvr(
+prt(1
+end(
+end(
