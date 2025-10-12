@@ -62,6 +62,8 @@ If you want, the releases can also let you run them in executable form. (soon)
 
 `uselib` - Uses a folder with Pur programs as a library. Classes are folders, methods are files.
 
+`exit` - Quit but silent.
+
 ### Syntax
 
 Syntax is like this:
