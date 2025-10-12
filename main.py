@@ -216,6 +216,8 @@ def read(code):
                 time.sleep(float(op))
             except:
                 print("TimeError in line", str(line))
+        elif s(line)[0] == "rprt":
+            print(s(line)[1:])
         else:
             print("Err in line",str(i)+": Unsupported","'"+str(line)+"'")
             quit(1)
