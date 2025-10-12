@@ -1,0 +1,12 @@
+prt(Addition
+prt(Whats first number
+into(first
+prt(whats second
+into(second
+add(first(second(last
+prt(sum is last
+rand(first(second(haha
+prt(random thingies is haha
+prt(waiting haha seconds...
+wait(haha
+prt(waited haha seconds

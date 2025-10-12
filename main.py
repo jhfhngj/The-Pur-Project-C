@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import os
 import sys
+import random
+import time
 def s(text: str):
     return text.split("(")
 global rufc
@@ -173,6 +175,47 @@ def read(code):
             quit(int(s(line)[2]))
         elif s(line)[0] == "exit":
             exit(0)
+        elif s(line)[0] == "add":
+            try:
+                op1 = var.get(s(line)[1], s(line)[1])
+                op2 = var.get(s(line)[2], s(line)[2])
+                var[s(line)[3]] = str(float(op1) + float(op2))
+            except:
+                print("BasicMathICanterror in line", str(line))
+        elif s(line)[0] == "sub":
+            try:
+                op1 = var.get(s(line)[1], s(line)[1])
+                op2 = var.get(s(line)[2], s(line)[2])
+                var[s(line)[3]] = str(float(op1) - float(op2))
+            except:
+                print("BasicMathICanterror in line", str(line))
+        elif s(line)[0] == "mul":
+            try:
+                op1 = var.get(s(line)[1], s(line)[1])
+                op2 = var.get(s(line)[2], s(line)[2])
+                var[s(line)[3]] = str(float(op1) * float(op2))
+            except:
+                print("BasicMathICanterror in line", str(line))
+        elif s(line)[0] == "div":
+            try:
+                op1 = var.get(s(line)[1], s(line)[1])
+                op2 = var.get(s(line)[2], s(line)[2])
+                var[s(line)[3]] = str(float(op1) / float(op2))
+            except:
+                print("BasicMathICanterror in line", str(line))
+        elif s(line)[0] == "rand":
+            try:
+                op1 = int(var.get(s(line)[1], s(line)[1]))
+                op2 = int(var.get(s(line)[2], s(line)[2]))
+                var[s(line)[3]] = str(random.randint(op1, op2))
+            except:
+                print("SmackBang error in line", str(line))
+        elif s(line)[0] == "wait":
+            try:
+                op = var.get(s(line)[1], s(line)[1])
+                time.sleep(float(op))
+            except:
+                print("TimeError in line", str(line))
         else:
             print("Err in line",str(i)+": Unsupported","'"+str(line)+"'")
             quit(1)
@@ -191,7 +234,7 @@ if len(sys.argv) > 1:
     input("Press Enter to continue . . . ")
 else:
     b = []
-    print("Pur Interpreter 1.9 on " + str(os.uname()[0]), str(os.uname()[1]))
+    print("Pur Interpreter 2.0 on " + str(os.uname()[0]), str(os.uname()[1]))
     while True:
         a = input(": ")
         if a.lower() == "run":
