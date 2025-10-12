@@ -64,6 +64,18 @@ If you want, the releases can also let you run them in executable form. (soon)
 
 `exit` - Quit but silent.
 
+`add` - Add 2 numbers/vars and save the result in the var of the 3rd parameter.
+
+`sub` - `add` but subtraction.
+
+`mul` - `sub` but multiplication.
+
+`div` - `mul` but division.
+
+`wait` - Wait for param 1 seconds. (Float precision)
+
+`rand` - Random number between param 1 and 2, including endpoints.
+
 ### Syntax
 
 Syntax is like this:
