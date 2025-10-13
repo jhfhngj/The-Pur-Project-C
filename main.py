@@ -4,12 +4,13 @@ import sys
 import random
 import time
 import cmath
+
 def s(text: str):
     return text.split("(")
 global rufc
 rufc = False
 var = {}
-var["pi"] = 3.14159265358
+var["pi"] = cmath.pi
 funcs = {}
 libs = []
 dirlibs = []
@@ -265,7 +266,7 @@ if len(sys.argv) > 1:
     input("Press Enter to continue . . . ")
 else:
     b = []
-    print("Pur Interpreter 2.0 on " + str(os.uname()[0]), str(os.uname()[1]))
+    print("Pur Interpreter 2.1 on " + str(os.uname()[0]), str(os.uname()[1]))
     while True:
         a = input(": ")
         if a.lower() == "run":
