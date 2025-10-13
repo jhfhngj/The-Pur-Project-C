@@ -2,8 +2,6 @@
 
 Remake of Pur-B, Pur fam originally was hard to develop
 
-I fixed Pur 1.8! Yes! It's time to be happy and not spontaneously combust!
-
 ## How to install Pur?
 
 First of all, you clone the repo by doing `git clone https://github.com/jhfhngj/The-Pur-Project-C.git`
@@ -63,6 +61,8 @@ If you want, the releases can also let you run them in executable form. (soon)
 `uselib` - Uses a folder with Pur programs as a library. Classes are folders, methods are files.
 
 `exit` - Quit but silent.
+
+`brk` - Break out of a loop, usually `frvr` loops.
 
 `add` - Add 2 numbers/vars and save the result in the var of the 3rd parameter.
 
