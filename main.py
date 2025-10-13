@@ -214,7 +214,7 @@ def read(code):
         elif s(line)[0] == "abs":
             try:
                 op1 = var.get(s(line)[1], s(line)[1])
-                var[s(line)[2]] = str(abs(op1))
+                var[s(line)[2]] = str(abs(float(op1)))
             except:
                 print("ComplexMathICanterror in line", str(line))
         elif s(line)[0] == "min":
