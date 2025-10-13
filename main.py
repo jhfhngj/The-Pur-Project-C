@@ -208,7 +208,7 @@ def read(code):
             try:
                 op1 = var.get(s(line)[1], s(line)[1])
                 op2 = var.get(s(line)[2], s(line)[2])
-                var[s(line)[3]] = str(float(op1) ^ float(op2))
+                var[s(line)[3]] = str(float(op1) ** float(op2))
             except:
                 print("ComplexMathICanterror in line", str(line))
         elif s(line)[0] == "abs":
