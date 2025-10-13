@@ -8,6 +8,7 @@ def s(text: str):
 global rufc
 rufc = False
 var = {}
+var["pi"] = 3.14159265358
 funcs = {}
 libs = []
 dirlibs = []
@@ -203,6 +204,33 @@ def read(code):
                 var[s(line)[3]] = str(float(op1) / float(op2))
             except:
                 print("BasicMathICanterror in line", str(line))
+        elif s(line)[0] == "pow":
+            try:
+                op1 = var.get(s(line)[1], s(line)[1])
+                op2 = var.get(s(line)[2], s(line)[2])
+                var[s(line)[3]] = str(float(op1) ^ float(op2))
+            except:
+                print("ComplexMathICanterror in line", str(line))
+        elif s(line)[0] == "abs":
+            try:
+                op1 = var.get(s(line)[1], s(line)[1])
+                var[s(line)[2]] = str(abs(op1))
+            except:
+                print("ComplexMathICanterror in line", str(line))
+        elif s(line)[0] == "min":
+            try:
+                op1 = var.get(s(line)[1], s(line)[1])
+                op2 = var.get(s(line)[2], s(line)[2])
+                var[s(line)[3]] = str(min(float(op1), float(op2)))
+            except:
+                print("ComplexMathICanterror in line", str(line))
+        elif s(line)[0] == "max":
+            try:
+                op1 = var.get(s(line)[1], s(line)[1])
+                op2 = var.get(s(line)[2], s(line)[2])
+                var[s(line)[3]] = str(max(float(op1), float(op2)))
+            except:
+                print("ComplexMathICanterror in line", str(line))    
         elif s(line)[0] == "rand":
             try:
                 op1 = int(var.get(s(line)[1], s(line)[1]))
