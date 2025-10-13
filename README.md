@@ -76,6 +76,14 @@ If you want, the releases can also let you run them in executable form. (soon)
 
 `rand` - Random number between param 1 and 2, including endpoints.
 
+`pow` - Exponentiate something.
+
+`abs` - Find the absolute value. (Make it positive)
+
+`min` - Find the minimum value between 2 numbers.
+
+`max` - Find the maximum value between 2 numbers.
+
 ### Syntax
 
 Syntax is like this:
