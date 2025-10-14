@@ -1,6 +1,6 @@
 # The-Pur-Project-C
 
-![Pur's logo](logo.png)
+![Pur's logo](Pur1.png)
 
 Remake of Pur-B, Pur fam originally was hard to develop
 
