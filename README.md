@@ -1,5 +1,7 @@
 # The-Pur-Project-C
 
+![Pur's logo](logo.png)
+
 Remake of Pur-B, Pur fam originally was hard to develop
 
 ## How to install Pur?
