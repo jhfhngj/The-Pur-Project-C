@@ -5,6 +5,7 @@ import random
 import time
 import cmath
 
+trying = False
 def s(text: str):
     return text.split("(")
 global rufc
@@ -17,6 +18,7 @@ dirlibs = []
 out = ""
 def read(code):
     global rufc
+    global trying
     rufc = False
     code = list(code)
     out = ""
@@ -139,11 +141,18 @@ def read(code):
             end = i
             if typel == 'loopf':
                 i = start
+                continue
             if rufc == True:
                 i = gt + 1
                 rufc = False
+                continue
             if typel == 'brk':
                 start = i+1
+                continue
+            if trying:
+                trying = False
+                continue
+            
         elif s(line)[0] == "runpy":
             os.system(f"python3 {s(line)[1]}")
         elif line.startswith("##"):
@@ -165,14 +174,18 @@ def read(code):
             try:
                 var.pop(s(line)[1])
             except:
-                print("KeydelError in line",str(line))
-                quit(2)
+                if not trying:
+                    print("KeydelError in line",str(line))
+                    quit(2)
+                else:
+                    pass
         elif s(line)[0] == "rmfunc":
             try:
                 funcs.pop(s(line)[1])
             except:
-                print("KeydelError in line",str(line))
-                quit(2)
+                if not trying:
+                    print("KeydelError in line",str(line))
+                    quit(2)
         elif s(line)[0] == "quit":
             print(s(line)[1])
             quit(int(s(line)[2]))
@@ -184,70 +197,93 @@ def read(code):
                 op2 = var.get(s(line)[2], s(line)[2])
                 var[s(line)[3]] = str(float(op1) + float(op2))
             except:
-                print("BasicMathICanterror in line", str(line))
+                if not trying:
+                    print("BasicMathICanterror in line", str(line))
+                    quit(2)
         elif s(line)[0] == "sub":
             try:
                 op1 = var.get(s(line)[1], s(line)[1])
                 op2 = var.get(s(line)[2], s(line)[2])
                 var[s(line)[3]] = str(float(op1) - float(op2))
             except:
-                print("BasicMathICanterror in line", str(line))
+                if not trying:
+                    print("BasicMathICanterror in line", str(line))
+                    quit(2)
         elif s(line)[0] == "mul":
             try:
                 op1 = var.get(s(line)[1], s(line)[1])
                 op2 = var.get(s(line)[2], s(line)[2])
                 var[s(line)[3]] = str(float(op1) * float(op2))
             except:
-                print("BasicMathICanterror in line", str(line))
+                if not trying:
+                    print("BasicMathICanterror in line", str(line))
+                    quit(2)
         elif s(line)[0] == "div":
             try:
                 op1 = var.get(s(line)[1], s(line)[1])
                 op2 = var.get(s(line)[2], s(line)[2])
                 var[s(line)[3]] = str(float(op1) / float(op2))
             except:
-                print("BasicMathICanterror in line", str(line))
+                if not trying:
+                    print("BasicMathICanterror in line", str(line))
+                    quit(2)
         elif s(line)[0] == "pow":
             try:
                 op1 = var.get(s(line)[1], s(line)[1])
                 op2 = var.get(s(line)[2], s(line)[2])
                 var[s(line)[3]] = str(float(op1) ** float(op2))
             except:
-                print("ComplexMathICanterror in line", str(line))
+                if not trying:
+                    print("ComplexMathICanterror in line", str(line))
+                    quit(2)
+                    print("What? You broke the laws of Pythonics with this one.")
         elif s(line)[0] == "abs":
             try:
                 op1 = var.get(s(line)[1], s(line)[1])
                 var[s(line)[2]] = str(abs(float(op1)))
             except:
-                print("ComplexMathICanterror in line", str(line))
+                if not trying:
+                    print("ComplexMathICanterror in line", str(line))
+                    quit(2)
         elif s(line)[0] == "min":
             try:
                 op1 = var.get(s(line)[1], s(line)[1])
                 op2 = var.get(s(line)[2], s(line)[2])
                 var[s(line)[3]] = str(min(float(op1), float(op2)))
             except:
-                print("ComplexMathICanterror in line", str(line))
+                if not trying:
+                    print("ComplexMathICanterror in line", str(line))
+                    quit(2)
         elif s(line)[0] == "max":
             try:
                 op1 = var.get(s(line)[1], s(line)[1])
                 op2 = var.get(s(line)[2], s(line)[2])
                 var[s(line)[3]] = str(max(float(op1), float(op2)))
             except:
-                print("ComplexMathICanterror in line", str(line))    
+                if not trying:
+                    print("ComplexMathICanterror in line", str(line))
+                    quit(2)
         elif s(line)[0] == "rand":
             try:
                 op1 = int(var.get(s(line)[1], s(line)[1]))
                 op2 = int(var.get(s(line)[2], s(line)[2]))
                 var[s(line)[3]] = str(random.randint(op1, op2))
             except:
-                print("SmackBang error in line", str(line))
+                if not trying:
+                    print("RandomError in line", str(line))
+                    quit(2)
         elif s(line)[0] == "wait":
             try:
                 op = var.get(s(line)[1], s(line)[1])
                 time.sleep(float(op))
             except:
-                print("TimeError in line", str(line))
+                if not trying:
+                    print("TimeError in line", str(line))
+                    quit(2)
         elif s(line)[0] == "rprt":
             print(s(line)[1:])
+        elif s(line)[0] == "try":
+            trying = True
         else:
             print("Err in line",str(i)+": Unsupported","'"+str(line)+"'")
             quit(1)
@@ -266,7 +302,7 @@ if len(sys.argv) > 1:
     input("Press Enter to continue . . . ")
 else:
     b = []
-    print("Pur Interpreter 2.1 on " + str(os.uname()[0]), str(os.uname()[1]))
+    print("Pur Interpreter 2.2 on " + str(os.uname()[0]), str(os.uname()[1]))
     while True:
         a = input(": ")
         if a.lower() == "run":
