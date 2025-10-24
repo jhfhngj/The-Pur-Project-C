@@ -34,9 +34,9 @@ def read(code):
             full = ""
             for thingie in s(line)[1].split():
                 if var.get(thingie) != None:
-                    full += var.get(thingie) + " "
+                    full += str(var.get(thingie)) + " "
                 else:
-                    full += thingie + " "
+                    full += str(thingie) + " "
             print(full)
         elif s(line)[0] == "into":
             do = input()
@@ -284,6 +284,16 @@ def read(code):
             print(s(line)[1:])
         elif s(line)[0] == "try":
             trying = True
+        elif s(line)[0] == "len":
+            try:
+                op = var.get(s(line)[1], s(line)[1])
+                var[s(line)[2]] = len(op)
+            except:
+                print("LengthError in line:",str(line))
+                quit(2)
+        elif s(line)[0] == "choice":
+            op = var.get(s(line)[1], s(line)[1])
+            var[s(line)[2]] = random.choice(op)
         else:
             print("Err in line",str(i)+": Unsupported","'"+str(line)+"'")
             quit(1)

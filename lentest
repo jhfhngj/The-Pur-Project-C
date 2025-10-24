@@ -1,0 +1,5 @@
+vardef(myword(hello
+len(myword(length
+prt(length
+choice(myword(char
+prt(the character char is pretty random, maybe
