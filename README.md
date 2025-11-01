@@ -2,7 +2,7 @@
 
 <img src="Pur1.png" alt="Pur's logo" width="200" height="200">
 
-Remake of Pur-B, Pur fam originally was hard to develop
+Remake of Pur-B 1.4, the Pur family originally was hard to develop
 
 ## How to install Pur?
 
