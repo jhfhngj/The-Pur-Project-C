@@ -145,6 +145,8 @@ That's all
 
 It does something. In the function, you can access those variables and now you talk to the functions!
 
+But you have to define the function *after* the input.
+
 ## Examples
 
 Forever - forever loop!
@@ -183,12 +185,14 @@ rfunc(throwaway
 Function Speak
 ```
 ## What do I say?
+
+prt(I will repeat your words via functions.
+into(words
+
 func(speak
 prt(words
 end(
 
-prt(I will repeat your words via functions.
-into(words
 rfunc(speak
 ```
 
