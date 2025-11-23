@@ -179,3 +179,16 @@ rmfunc(throwaway
 ## Crash time!
 rfunc(throwaway
 ```
+
+Function Speak
+```
+## What do I say?
+func(speak
+prt(words
+end(
+
+prt(I will repeat your words via functions.
+into(words
+rfunc(speak
+```
+
