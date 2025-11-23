@@ -122,7 +122,7 @@ After that, making functions is easy. You can't give input yet, but to make one,
 
 Really simple to do that.
 
-First, you (ofc) make a program doing stuff.
+First, you (of course) make a program doing stuff.
 
 When you want to use a library,
 
@@ -131,6 +131,19 @@ you call the `get` command and for the input, do the directory of the library.
 After that, you call `uselib` with two inputs. The first one is the directory of it.
 
 The second input is the last one, soon to be only 2 or 3 inputs. It is the filename of the function.
+
+### I wanna talk to my functions, but that isn't supported.
+
+It is.
+
+To do so, just make a variable, a temporary variable. (via doing `rvar` after time)
+
+And that's it.
+That's all
+
+> That does nothing!
+
+It does something. In the function, you can access those variables and now you talk to the functions!
 
 ## Examples
 
