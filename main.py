@@ -15,6 +15,7 @@ var["pi"] = cmath.pi
 funcs = {}
 libs = []
 dirlibs = []
+lists = {}
 out = ""
 def read(code):
     global rufc
@@ -312,7 +313,7 @@ if len(sys.argv) > 1:
     input("Press Enter to continue . . . ")
 else:
     b = []
-    print("Pur Interpreter 2.2 on " + str(os.uname()[0]), str(os.uname()[1]))
+    print("Pur Interpreter 2.3 on " + str(os.name()))
     while True:
         a = input(": ")
         if a.lower() == "run":
