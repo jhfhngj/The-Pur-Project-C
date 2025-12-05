@@ -86,6 +86,16 @@ If you want, the releases can also let you run them in executable form. (soon)
 
 `max` - Find the maximum value between 2 numbers.
 
+`mli` - Create a blank list for use!
+
+`ali` - Append a value to a list.
+
+`gli` - Get item from list at index and save it as a variable.
+
+`pli` - Pop last item from list and save it as a variable.
+
+`pil` - Pop item from list at index and save it as a variable.
+
 ### Syntax
 
 Syntax is like this:
