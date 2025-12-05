@@ -15,12 +15,16 @@ var["pi"] = cmath.pi
 funcs = {}
 libs = []
 dirlibs = []
+lists = {}
 out = ""
 def read(code):
     global rufc
     global trying
     rufc = False
-    code = list(code)
+    codeo = list(code)
+    code = []
+    for line in codeo:
+        code.append(line.strip)
     out = ""
     typel = ""
     i = 0
@@ -289,11 +293,57 @@ def read(code):
                 op = var.get(s(line)[1], s(line)[1])
                 var[s(line)[2]] = len(op)
             except:
-                print("LengthError in line:",str(line))
-                quit(2)
+                if not trying:
+                    print("LengthError in line:",str(line))
+                    quit(2)
         elif s(line)[0] == "choice":
-            op = var.get(s(line)[1], s(line)[1])
-            var[s(line)[2]] = random.choice(op)
+            try:
+                op = var.get(s(line)[1], s(line)[1])
+                var[s(line)[2]] = random.choice(op)
+            except:
+                if not trying:
+                    print("RandomError in line:",str(line))
+                    quit(2)
+        elif s(line)[0] == "mli":
+            try:
+                # Make list
+                lists[s(line)[1]] = []
+            except:
+                if not trying:
+                    print("ListError in line:",str(line))
+                    quit(2)
+        elif s(line)[0] == "gli":
+            # Get from list and set to var
+            try:
+                var[s(line)[3]] = lists[s(line)[1]][int(s(line)[2])]
+            except:
+                if not trying:
+                    print("ListError in line:",str(line))
+                    quit(2)
+        elif s(line)[0] == "ali":
+            # Append to list
+            try:
+                lists[s(line)[1]].append(s(line)[2])
+            except:
+                if not trying:
+                    print("ListError in line:",str(line))
+                    quit(2)
+        elif s(line)[0] == "pli":
+            # Pop w/o index from list
+            try:
+                var[s(line)[2]] = lists[s(line)[1]].pop()
+            except:
+                if not trying:
+                    print("ListError in line:",str(line))
+                    quit(2)
+        elif s(line)[0] == "pil":
+            # Pop with index from list
+            try:
+                var[s(line)[2]] = lists[s(line)[1]].pop(s(line)[3])
+            except:
+                if not trying:
+                    print("ListError in line:",str(line))
+                    quit(2)
         else:
             print("Err in line",str(i)+": Unsupported","'"+str(line)+"'")
             quit(1)
@@ -312,7 +362,7 @@ if len(sys.argv) > 1:
     input("Press Enter to continue . . . ")
 else:
     b = []
-    print("Pur Interpreter 2.2 on " + str(os.uname()[0]), str(os.uname()[1]))
+    print("Pur Interpreter 2.3 on " + str(os.name()))
     while True:
         a = input(": ")
         if a.lower() == "run":
