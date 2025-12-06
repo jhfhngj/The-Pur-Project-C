@@ -362,7 +362,7 @@ if len(sys.argv) > 1:
     input("Press Enter to continue . . . ")
 else:
     b = []
-    print("Pur Interpreter 2.3 on " + str(os.name()))
+    print("Pur Interpreter 2.3 on " + str(os.name))
     while True:
         a = input(": ")
         if a.lower() == "run":
