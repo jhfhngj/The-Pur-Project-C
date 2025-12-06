@@ -24,7 +24,7 @@ def read(code):
     codeo = list(code)
     code = []
     for line in codeo:
-        code.append(line.strip)
+        code.append(line.strip())
     out = ""
     typel = ""
     i = 0
