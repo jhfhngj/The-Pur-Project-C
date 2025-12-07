@@ -344,6 +344,15 @@ def read(code):
                 if not trying:
                     print("ListError in line:",str(line))
                     quit(2)
+        elif s(line)[0] == "mod":
+            try:
+                op1 = var.get(s(line)[1], s(line)[1])
+                op2 = var.get(s(line)[2], s(line)[2])
+                var[s(line)[3]] = str(float(op1) % float(op2))
+            except:
+                if not trying:
+                    print("KindaBasicMathICanterror in line", str(line))
+                    quit(2)
         else:
             print("Err in line",str(i)+": Unsupported","'"+str(line)+"'")
             quit(1)
