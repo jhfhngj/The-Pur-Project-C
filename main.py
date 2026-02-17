@@ -4,6 +4,7 @@ import sys
 import random
 import time
 import cmath
+import pickle
 
 trying = False
 def s(text: str):
@@ -351,7 +352,23 @@ def read(code):
                 var[s(line)[3]] = str(float(op1) % float(op2))
             except:
                 if not trying:
-                    print("KindaBasicMathICanterror in line", str(line))
+                    print("NotSoBasicMathICanterror in line", str(line))
+                    quit(2)
+        elif s(line)[0] == "wtl":
+            try:
+                with open(str(var.get(s(line)[1])), "wb") as f:
+                    pickle.dump(s(line)[2],f)
+            except:
+                if not trying:
+                    print("FileError in line",str(line))
+                    quit(2)
+        elif s(line)[0] == "rfl":
+            try:
+                with open(str(var.get(s(line)[1])), "rb") as f:
+                    var[s(line)[2]] = pickle.load(f)
+            except Exception as e:
+                if not trying:
+                    print("FileError in line",str(line))
                     quit(2)
         else:
             print("Err in line",str(i)+": Unsupported","'"+str(line)+"'")

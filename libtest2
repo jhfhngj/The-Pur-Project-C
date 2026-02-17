@@ -1,0 +1,6 @@
+get(senselib(readsend
+vardef(data(wow
+wtl(data(dataa
+uselib(senselib(readsend
+rfl(wow(some
+prt(some
