@@ -96,6 +96,10 @@ If you want, the releases can also let you run them in executable form. (soon)
 
 `pil` - Pop item from list at index and save it as a variable.
 
+`wtl` - Write data of a variable to a file (Pickled, main purpose was actually sending data between library and program)
+
+`rfl` - Read data from a file (Unpickled)
+
 ### Syntax
 
 Syntax is like this:
