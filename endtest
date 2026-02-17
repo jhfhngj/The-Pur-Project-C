@@ -1,0 +1,8 @@
+vardef(i(0
+frvr(
+prt(i
+if=(i(10(_
+prt("i" is 10 now
+brk(
+end
+end
