@@ -104,7 +104,10 @@ If you want, the releases can also let you run them in executable form. (soon)
 
 Syntax is like this:
 
-`command(input`
+`command(input(alsoanarg`
+
+Commas? No! Left parentheses are better.
+NEVER TYPE ) IT HAS CAUSED TOO MANY ISSUES TO PUR Anyways
 
 To make a comment, the line HAS to start with `##`!
 
