@@ -21,6 +21,7 @@ out = ""
 def read(code):
     global rufc
     global trying
+    stack = []
     rufc = False
     codeo = list(code)
     code = []
@@ -32,7 +33,8 @@ def read(code):
     while i < len(code):
         line = str(code[i])
         try:
-            end = code.index("end(", i)
+            #end = code.index("end(", i)
+            end = code.index(stack[-1])
         except:
             end = len(code)
         if s(line)[0] == "prt":
